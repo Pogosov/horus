@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>TestSuite App</title>
+</head>
+<body>
+
+    <div>
+        <h2>All TestSuites</h2>
+        <ul id="testsuites" />
+    </div>
+    <div>
+        <h2>Search by ID</h2>
+        <input type="text" id="suiteId" size="5" />
+        <input type="button" value="Search" onclick="find();" />
+        <p id="testsuite" />
+    </div>
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+    <script>
+        var uri = 'api/testsuites';
+
+        $(document).ready(function () {
+            // Send an AJAX request
+            $.getJSON(uri)
+                .done(function (data) {
+                    // On success, 'data' contains a list of testsuites.
+                    $.each(data, function (key, item) {
+                        // Add a list item for the testsuite.
+                        $('<li>', { text: formatItem(item) }).appendTo($('#testsuites'));
+                    });
+                });
+        });
+
+        function formatItem(item) {
+            return item.Name + ' => started at: ' + item.StartTime + ' and ended at: ' + item.EndTime;
+        }
+
+        function find() {
+            var id = $('#suiteId').val();
+            $.getJSON(uri + '/' + id)
+                .done(function (data) {
+                    $('#testsuite').text(formatItem(data));
+                })
+                .fail(function (jqXHR, textStatus, err) {
+                    $('#testsuite').text('Error: ' + err);
+                });
+        }
+    </script>
+</body>
+</html>

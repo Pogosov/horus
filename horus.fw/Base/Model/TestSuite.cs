@@ -1,11 +1,11 @@
-﻿using horus.Utility;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using horus.fw.FwUtil;
 
-namespace horus.Base.Model
+namespace horus.fw.Base.Model
 {
     public class TestSuite : TestBase
     {
@@ -21,7 +21,7 @@ namespace horus.Base.Model
         {
             get
             {
-                return HorusConfig.RerunCase;
+                return Config.RerunCase;
             }
         }
 
@@ -37,7 +37,7 @@ namespace horus.Base.Model
         {
             get
             {
-                return Tests.Count(x => x.Status == Base.Status.Passed);
+                return Tests.Count(x => x.Status == Status.Passed);
             }
         }
 
@@ -45,7 +45,7 @@ namespace horus.Base.Model
         {
             get
             {
-                return Tests.Count(x => x.Status == Base.Status.Failed);
+                return Tests.Count(x => x.Status == Status.Failed);
             }
         }
 
@@ -53,7 +53,7 @@ namespace horus.Base.Model
         {
             get
             {
-                return Tests.Count(x => x.Status == Base.Status.Skipped);
+                return Tests.Count(x => x.Status == Status.Skipped);
             }
         }
 
@@ -61,7 +61,7 @@ namespace horus.Base.Model
         {
             get
             {
-                return Tests.Count(x => x.Status == Base.Status.Pending);
+                return Tests.Count(x => x.Status == Status.Pending);
             }
         }
 

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace horus.Base.Model
+namespace horus.fw.Base.Model
 {
     public class TestCase : TestBase
     {

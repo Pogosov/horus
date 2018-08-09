@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Suites>
+  <Suite IsRun="True" Name="Fw_Demo_Suite">
+    <Case IsRun="True">Test_Case_1</Case>
+    <Case IsRun="True">Test_Case_2</Case>
+    <Case IsRun="True">Test_Case_3</Case>
+    <Case IsRun="True">Test_Case_4</Case>
+  </Suite>
+</Suites>

@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static horus.Base.Base;
 
-namespace horus.Base.Model
+namespace horus.fw.Base.Model
 {
-    public class TestBase
+    public abstract class TestBase
     {
         public int Index { get; private set; }
 
         public string ID { get; private set; }
 
         public string Name { get; private set; }
+
+        public string Author { get; private set; }
 
         public Status Status { get; private set; }
 
@@ -56,7 +57,12 @@ namespace horus.Base.Model
         {
             Name = name;
         }
-        
+
+        public void SetAuthor(string author)
+        {
+            Author = author;
+        }
+
         public void SetStatus(Status status)
         {
             Status = status;
@@ -77,7 +83,7 @@ namespace horus.Base.Model
             Error = message;
         }
 
-        public void SetMasterTestCase(bool isStopper)
+        public void SetStopper(bool isStopper)
         {
             IsStopper = isStopper;
         }

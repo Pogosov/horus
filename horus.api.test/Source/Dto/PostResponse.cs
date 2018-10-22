@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace horus.fw.api.Source.Data
+namespace horus.fw.api.Source.Dto
 {
     public class PostResponse
     {

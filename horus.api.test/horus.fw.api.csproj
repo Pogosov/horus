@@ -45,10 +45,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Source\Data\GetResponse.cs" />
-    <Compile Include="Source\Data\PostResponse.cs" />
-    <Compile Include="Source\Data\PutResponse.cs" />
-    <Compile Include="Source\Data\User.cs" />
+    <Compile Include="Source\Dto\GetResponse.cs" />
+    <Compile Include="Source\Dto\PostResponse.cs" />
+    <Compile Include="Source\Dto\PutResponse.cs" />
+    <Compile Include="Source\Dto\User.cs" />
     <Compile Include="Source\Step\Fw_Demo_Step.cs" />
     <Compile Include="Source\Step\Reqres_Api_Step.cs" />
     <Compile Include="Source\Suite\Fw_Demo_Suite.cs" />

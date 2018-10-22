@@ -15,6 +15,12 @@ namespace horus.fw.api.Source.Suite
     [TestSuite]
     public class Fw_Demo_Suite
     {
+        private List<object[]> Paras = new List<object[]>()
+        {
+            new object[] { "1111", 2222 },
+            new object[] { "3333", 4444 }
+        };
+
         [Steps]
         Fw_Demo_Step FwDemoStep { get; set; }
 
@@ -35,25 +41,26 @@ namespace horus.fw.api.Source.Suite
             Logger.LogMsg(Severity.WARN, "Before_Test_Case");
         }
 
-        [TestCase]
+        [TestCase(ID = "1.1")]
         public void Test_Case_1()
         {
             FwDemoStep.Test_Step_1();
         }
 
-        [TestCase]
+        [TestCase(ID = "1.2")]
         public void Test_Case_2()
         {
             FwDemoStep.Test_Step_2();
         }
 
-        [TestCase]
-        public void Test_Case_3()
+        [TestCase(ID = "1.3", TestData = "Paras")]
+        public void Test_Case_3(string para1, int para2)
         {
+            Console.WriteLine($"Data-Driven Test => values: para1='{para1}', para2='{para2}'...");
             FwDemoStep.Test_Step_3();
         }
 
-        [TestCase(Status = Status.Pending, Comment = "Did not complete the test case yet!")]
+        [TestCase(ID = "1.4", Status = Status.Pending, Comment = "Did not complete the test case yet!")]
         public void Test_Case_4()
         {
             FwDemoStep.Test_Step_4();
